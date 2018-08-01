@@ -1,0 +1,33 @@
+<view class="layout">
+  <view class="top-bar">
+    <text>  Riking图书馆</text>
+    <image src="../../images/arrows.png" class="book-icon"></image>
+  </view>
+  <view >
+          <image  class="logo" src="../../images/timg.jpg" />
+  </view>
+   
+  <view class="hot-books">
+    <view class="hb-bar">
+      <text> 库存图书</text>
+      <image src="../../images/arrows.png" class="book-icon"></image>
+    </view>
+  <view>
+   <!--scrollview-->
+  <scroll-view scroll-y="true" class="scrollview-list" style="height:750px">
+    <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
+      <!-- item-->
+      <view data-index="{{index}}" class="topContainsView" bindtap='detail'>
+        <image class="goodsImage" src="{{myArray[index].picture}}" mode='scaleToFill' />
+        <view class="topRightView">
+        <text class="topRightName" decode="{{true}}">书名：{{myArray[index].booktitle}} </text>
+          <text class="topRightTime">出版社：{{myArray[index].publish}}</text>
+          <text class="topRightTime" decode="{{true}}">作&nbsp;&nbsp;&nbsp;&nbsp;者：{{myArray[index].author}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  
+  </view>
+  </view>
+</view>

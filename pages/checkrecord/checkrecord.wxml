@@ -1,0 +1,23 @@
+<view class="table">
+  <view class="tr bg-w">
+
+    <view class="th2">借书人</view>
+    <view class="th3 ">借阅时间</view>
+
+  </view>
+
+  <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+
+      <view class="td2">{{myArray[index].username}}</view>
+      <view class="td3">{{myArray[index].borrowtime}}</view>
+     
+    </view>
+    <view class="tr" wx:else>
+
+      <view class="td2">{{myArray[index].username}}</view>
+      <view class="td3">{{myArray[index].borrowtime}}</view>
+      
+    </view>
+  </block>
+</view>

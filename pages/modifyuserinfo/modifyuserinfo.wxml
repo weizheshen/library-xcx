@@ -1,0 +1,21 @@
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view class="info">姓名</view>
+<view class="inputView">
+  <input class="input" name="name"  bindinput="nameInput" value='{{user.username}}'/>
+</view>
+<view class="info">手机号</view>
+<view class="inputView">
+  <input class="input" name="tel"  bindinput="telInput" value='{{user.tel}}'/>
+</view>
+<view class="info">工号</view>
+<view class="inputView">
+  <input class="input" name="number" bindinput="numberInput" value='{{user.number}}'/>
+</view>
+<view class="info">办公地点</view>
+<view class="inputView">
+  <input class="input" name="place"  bindinput="placeInput" value='{{user.place}}'/>
+</view>
+<view class="viewName" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 100rpx; border-radius: 40rpx">
+  <button class="loginBtn" bindtap="loginBtnClick" type='primary'>提交</button>
+  <button class="delBtn" bindtap="del" type='warn'>删除</button>
+</view>

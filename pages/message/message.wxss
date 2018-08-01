@@ -1,0 +1,7 @@
+/* message/message.wxss */
+.message{  
+  margin-top: 100px;
+  display: flex;  
+  flex-direction: row;  
+  justify-content: center;   
+}

@@ -1,0 +1,17 @@
+<view class="title">个人信息登记</view>
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+<view class="inputView">
+  <input class="input" name="userName" placeholder="请输入姓名" bindinput="userNameInput" />
+</view>
+<view class="inputView">
+  <input class="input" name="userTel" placeholder="请输入手机号" bindinput="userPhoneInput" />
+</view>
+<view class="inputView">
+  <input class="input" name="userNumber" placeholder="请输入工号" bindinput="userNumberInput" />
+</view>
+<view class="inputView">
+  <input class="input" name="userPlace" placeholder="请输入办公地点" bindinput="userPlaceInput" />
+</view>
+<view class="viewName" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 100rpx; border-radius: 40rpx">
+  <button class="loginBtn" bindtap="loginBtnClick" type='primary'>提交</button>
+</view>

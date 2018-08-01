@@ -1,0 +1,26 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">工号</view>
+    <view class="th">姓名</view>
+    <view class="th ">办公地点</view>
+    <view class="th ">操作</view>
+  </view>
+
+  <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td" >{{myArray[index].number}}</view>
+      <view class="td">{{myArray[index].username}}</view>
+      <view class="td">{{myArray[index].place}}</view>
+      <view class="td" bindtap='review' data-index="{{index}}" wx:if="{{myArray[index].flag == 1}}"><button>通过</button></view>
+      <view class="td" bindtap='modify' data-index="{{index}}" wx:else><button>修改</button></view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{myArray[index].number}}</view>
+      <view class="td">{{myArray[index].username}}</view>
+      <view class="td">{{myArray[index].place}}</view>
+      <view class="td" bindtap='review' data-index="{{index}}" wx:if="{{myArray[index].flag == 1}}"><button>通过</button></view>
+      <view class="td" bindtap='modify' data-index="{{index}}" wx:else><button>修改</button></view>
+    </view>
+  </block>
+</view>
+

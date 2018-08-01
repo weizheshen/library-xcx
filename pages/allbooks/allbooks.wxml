@@ -1,0 +1,28 @@
+<!--allbooks/allbooks.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th1">书名</view>
+    <view class="th2">作者</view>
+    <view class="th3">出版社</view>
+    <view class="th4">库存</view> 
+  </view>
+
+  <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap='detail' data-index="{{index}}">
+      <view class="td1" >{{myArray[index].booktitle}}</view>
+      <view class="td2">{{myArray[index].author}}</view>
+      <view class="td3">{{myArray[index].publish}}</view>
+      <view class="td4">{{myArray[index].stock}}</view>
+
+    </view>
+    <view class="tr" wx:else bindtap='detail'data-index="{{index}}">
+      <view class="td1">{{myArray[index].booktitle}}</view>
+      <view class="td2">{{myArray[index].author}}</view>
+      <view class="td3">{{myArray[index].publish}}</view>
+      <view class="td4">{{myArray[index].stock}}</view>
+
+
+
+    </view>
+  </block>
+</view>

@@ -1,0 +1,30 @@
+<view class="layout">
+  <view class="reminder">
+    <text class="{{focusResult}}" bindtap="bindResultTap">搜索结果</text>
+  </view>
+  <view class="empty" wx:if="{{length == 0}}">
+      <image src="../../images/empty.png"></image>
+      <text>无相关书籍或相关书籍已全部借出！</text>
+  </view>
+  <view class="books-list">
+    <view class="book" wx:for="{{myArray}}" data-code="{{item.code}}"
+    bindtap="detail">
+      <view class="book-msg">
+        <image src="{{item.picture}}"></image>
+        <view class="text-msg">
+        <view class="title-mark">
+          <text class="title">{{item.booktitle}}</text>
+        </view>
+          <view class="grade">
+            <progress percent="{{item.average*10}}" stroke-width="6" color="#FDB235"/>
+            <text>{{item.average}}</text>
+          </view>
+          <text class="other-msg">{{item.author}}/{{item.publish}}/{{item.pubdate}}</text>
+        </view>
+      </view>
+      <view class="summary">
+        <text>{{item.miniSummary}}</text>
+      </view>
+    </view>
+  </view>
+</view>

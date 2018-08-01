@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/message/message",
+    "pages/search/search",
+    "pages/collectedlist/collectedlist",
+    "pages/resultlist/resultlist",
+    "pages/detail/detail",
+    "pages/review/review",
+    "pages/checkrecord/checkrecord",
+    "pages/returnbookreview/returnbookreview",
+    "pages/borrowbookreview/borrowbookreview",
+    "pages/reviewmessage/reviewmessage",
+    "pages/modifyinfo/modifyinfo",
+    "pages/modifyuserinfo/modifyuserinfo",
+    "pages/allbooks/allbooks",
+    "pages/admin/admin"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tagBarIcon/home.png",
+        "selectedIconPath": "images/tagBarIcon/homeSelected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "借书",
+        "iconPath": "images/tagBarIcon/search.png",
+        "selectedIconPath": "images/tagBarIcon/searchSelected.png"
+      },{
+        "pagePath": "pages/collectedlist/collectedlist",
+        "text": "我的",
+        "iconPath": "images/tagBarIcon/collect.png",
+        "selectedIconPath": "images/tagBarIcon/collectSelected.png"
+      }
+    ],
+    "borderStyle": "white",
+    "backgroundColor": "#f0f0f0",
+    "selectedColor": "#1aad16"
+  }
+}

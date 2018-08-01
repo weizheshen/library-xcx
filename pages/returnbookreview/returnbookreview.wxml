@@ -1,0 +1,24 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th1">书名</view>
+    <view class="th">借书人</view>
+    <view class="th ">借书时间</view>
+    <view class="th ">操作</view>
+  </view>
+
+  <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td1" >{{myArray[index].bookname}}</view>
+      <view class="td">{{myArray[index].username}}</view>
+      <view class="td">{{myArray[index].borrowtime}}</view>
+      <view class="td" bindtap='review' data-index="{{index}}"><button>通过</button></view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td1">{{myArray[index].bookname}}</view>
+      <view class="td">{{myArray[index].username}}</view>
+      <view class="td">{{myArray[index].borrowtime}}</view>
+      <view class="td" bindtap='review' data-index="{{index}}"><button>通过</button></view>
+    </view>
+  </block>
+</view>
+

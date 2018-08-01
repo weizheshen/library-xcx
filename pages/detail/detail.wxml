@@ -1,0 +1,63 @@
+<view class="layout">
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+  <view class="bookcover-wrap">
+    <image src="{{book.picture}}"></image>
+  </view>
+  <view class="bookinfo-wrap">
+    <view class="basic-msg">
+      <view class="basicmsg-left">
+        <text class="book-name">{{book.booktitle}}</text>
+        <text>作者：{{book.author}}</text>
+        <text>出版社：{{book.publish}}</text>
+        <text>出版时间：{{book.pubdate}}</text>
+      </view>
+      <view class="basicmsg-right">
+        <text class="average">{{book.average}}</text>
+        <progress percent="{{book.average*10}}" stroke-width="6" color="#FDB235" />
+        <text class="num-raters">{{book.numraters}}人</text>
+      </view>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'review'}}">
+      <button type="default"> 已申请借书 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'application'}}">
+      <button type="default"> 已申请还书 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'admin'}}">
+      <button type="primary" bindtap="modify" data-code="{{book.code}}" data-id="{{book.id}}"> 修改信息 </button>
+      <button type="primary" bindtap="check" data-code="{{book.code}}" class='check'> 查看借阅的人 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'again'}}">
+      <button type="primary" bindtap="borrowbookbysearch" data-code="{{book.code}}"> 再次借书 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'return'}}">
+      <button type="primary" bindtap="applicationreturn"> 申请还书 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'borrow'}}">
+      <button type="primary" bindtap="borrowbookbysearch" data-code="{{book.code}}"> 借阅该书 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'borrowreview'}}">
+      <button type="primary" bindtap="borrowreview" data-code="{{book.code}}"> 审核不通过 </button>
+    </view>
+    <view class="other-msg">
+      <view class="section">
+        <text class="title">内容简介</text>
+        <text class="content" >{{book.summary}}
+          
+        </text>
+      </view>
+      <view class="section">
+        <text class="title">作者简介</text>
+        <text class="content" >{{book.author_intro}}
+          
+        </text>
+      </view>
+      <view class="section">
+        <text class="title">目录</text>
+        <text class="content" >{{book.catalog}}
+          
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

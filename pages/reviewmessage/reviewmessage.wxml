@@ -1,0 +1,4 @@
+<!--reviewmessage/reviewmessage.wxml-->
+<view class='message'>
+暂无待审核信息！
+</view>

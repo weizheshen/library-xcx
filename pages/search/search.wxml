@@ -1,0 +1,19 @@
+
+<!--index.wxml-->
+<view>
+<image  class="logo" src="../../images/banner01.png" />
+</view>
+<view class="container">
+    
+  <form bindsubmit="formSubmit">
+    <input placeholder="请输入关键字" name="input" />
+    <button type="primary" form-type="submit">搜索借书</button>
+  </form>
+  <view class="scan">
+      <button type="primary" bindtap='borrowbook'>扫码借书</button>
+  </view>
+  <view class="index-motto">
+    <text class="motto">{{motto.content}} </text>
+    <text class="motto-author"> {{motto.author}}</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+  <view class="usermotto" bindtap='addbook'><button>新增图书</button></view>
+  <view class="usermotto2" bindtap='manage'><button>用户管理</button></view>
+   <view class="usermotto2" bindtap='returnbook'><button>还书审核</button></view>
+   <view class="usermotto2" bindtap='borrowbook'><button>借书审核</button></view>
+  <view class="usermotto2" bindtap='allbooks'><button>所有书籍</button></view>
+ 
+</view>
