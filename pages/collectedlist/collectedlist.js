@@ -66,6 +66,8 @@ Page({
           var type1 = 'again'
         } else if (res.data == 3){
           var type1 = 'return'
+        }else if(res.data == 5){
+          var type1 = 'borrowreviewno'
         }else{
           var type1 = 'application'
         }

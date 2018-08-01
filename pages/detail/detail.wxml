@@ -39,6 +39,11 @@
     <view class="collected-btn"  wx:if="{{type2 == 'borrowreview'}}">
       <button type="primary" bindtap="borrowreview" data-code="{{book.code}}"> 审核不通过 </button>
     </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'borrowreviewno'}}">
+      <button type="primary" bindtap="borrowbookbysearch" data-code="{{book.code}}"> 再次申请 </button>
+    </view>
+    
+    
     <view class="other-msg">
       <view class="section">
         <text class="title">内容简介</text>
