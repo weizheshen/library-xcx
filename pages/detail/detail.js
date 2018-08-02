@@ -130,6 +130,37 @@ Page({
 
   },
 
+  appbookagain:function(e){
+    var apiurl = app.globalData.apiurl; 
+    var id = app.globalData.id;
+    var that = this
+    wx.request({
+      url: apiurl + '/appbookagain?id=' + id,
+      data: {
+
+      },
+      method: 'GET',
+      success: function (resul) {
+        console.log('再次申请反馈：' + resul.data)
+        if (resul.data == 1) {
+          wx.showToast({
+            title: '申请成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+        } else {
+          that.setData(
+            { popErrorMsg: "申请失败，可能是库存不足" }
+          );
+          that.ohShitfadeOut();
+          return;
+        }
+      }
+    })
+
+  },
+
   applicationreturn: function (e){
     var apiurl = app.globalData.apiurl; 
     var that = this

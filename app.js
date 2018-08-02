@@ -6,7 +6,7 @@ App({
   globalData: {
     userInfo: null,
     detailExtData: "暂无收录相关信息",
-    apiurl: 'https://localhost'
+    apiurl: 'https://swz321.club'
   },
 
   onLaunch: function () {
