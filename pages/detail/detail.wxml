@@ -18,10 +18,13 @@
       </view>
     </view>
     <view class="collected-btn"  wx:if="{{type2 == 'review'}}">
-      <button type="default"> 已申请借书 </button>
+      <button type="primary"> 撤销申请 </button>
     </view>
     <view class="collected-btn"  wx:if="{{type2 == 'application'}}">
-      <button type="default"> 已申请还书 </button>
+      <button type="primary"> 撤销申请 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'nobook'}}">
+      <button type="default"> 库存不足 </button>
     </view>
     <view class="collected-btn"  wx:if="{{type2 == 'admin'}}">
       <button type="primary" bindtap="modify" data-code="{{book.code}}" data-id="{{book.id}}"> 修改信息 </button>

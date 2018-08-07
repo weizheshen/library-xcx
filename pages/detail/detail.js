@@ -117,13 +117,17 @@ Page({
                 duration: 1000,
                 mask: true
               })
-            } else {
-              that.setData(
-                { popErrorMsg: "申请失败，可能是库存不足" }
-              );
-              that.ohShitfadeOut();
-              return;  
+            } else if (resul.data == 2){
+              wx.showToast({
+                title: '申请成功',
+                icon: 'succes',
+                duration: 1000,
+                mask: true
+              })
+              app.globalData.opt.type = 'nobook'
+              that.onLoad(app.globalData.opt)
             }
+            
           }
         })
 

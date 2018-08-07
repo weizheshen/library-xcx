@@ -41,6 +41,20 @@ Page({
 
   },
 
+
+  detail: function (e) {
+    var that = this
+    var type1 = 'other'
+    var index = e.currentTarget.dataset.index
+    var code = this.data.myArray[index].bookcode;
+    var id = this.data.myArray[index].id;
+    wx.navigateTo({
+      url: '../detail/detail?code=' + code + '&type=' + type1 + '&id=' + id
+
+    })
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
