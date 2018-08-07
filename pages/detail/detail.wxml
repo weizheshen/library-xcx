@@ -17,14 +17,17 @@
         <text class="num-raters">{{book.numraters}}人</text>
       </view>
     </view>
-    <view class="collected-btn"  wx:if="{{type2 == 'review'}}">
+    <view class="collected-btn" bindtap="backborrow" wx:if="{{type2 == 'review'}}">
       <button type="primary"> 撤销申请 </button>
     </view>
-    <view class="collected-btn"  wx:if="{{type2 == 'application'}}">
+    <view class="collected-btn" bindtap="backreturn" wx:if="{{type2 == 'application'}}">
       <button type="primary"> 撤销申请 </button>
     </view>
     <view class="collected-btn"  wx:if="{{type2 == 'nobook'}}">
       <button type="default"> 库存不足 </button>
+    </view>
+    <view class="collected-btn"  wx:if="{{type2 == 'backed'}}">
+      <button type="default"> 已撤销 </button>
     </view>
     <view class="collected-btn"  wx:if="{{type2 == 'admin'}}">
       <button type="primary" bindtap="modify" data-code="{{book.code}}" data-id="{{book.id}}"> 修改信息 </button>

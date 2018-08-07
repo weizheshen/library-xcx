@@ -17,14 +17,8 @@ Page({
     var apiurl = app.globalData.apiurl; 
     app.globalData.id = options.id
     app.globalData.opt = options
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading',
-      duration: 500
-    })
     var that = this
     var code = options.code
-
     if (options.type==null){
       var type1 = 'borrow'
     }else{
@@ -172,9 +166,7 @@ Page({
     var that = this
     wx.request({
       url: apiurl +'/applicationreturn?id=' + app.globalData.id,
-      data: {
-
-      },
+      data: {},
       method: 'GET',
       success: function (resul) {
         console.log('还书反馈：' + resul.data)
@@ -196,6 +188,67 @@ Page({
         that.onLoad(app.globalData.opt)
       }
     })
+  },
+
+  backreturn:function(e){
+    var apiurl = app.globalData.apiurl;
+    var that = this
+    wx.request({
+      url: apiurl + '/backreturn?id=' + app.globalData.id,
+      data: {},
+      method: 'GET',
+      success: function (res) {
+        if (res.data == 1) {
+          app.globalData.opt.type = 'return'
+          wx.showToast({
+            title: '撤销成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+          that.onLoad(app.globalData.opt)
+        }else{
+          that.setData(
+            { popErrorMsg: "撤销失败" }
+          );
+          that.ohShitfadeOut();
+          return;
+        }
+  
+      }
+    })
+
+  },
+
+
+  backborrow:function(e){
+    var apiurl = app.globalData.apiurl;
+    var that = this
+    wx.request({
+      url: apiurl + '/backborrow?id=' + app.globalData.id,
+      data: {},
+      method: 'GET',
+      success: function (res) {
+        if (res.data == 1) {
+          app.globalData.opt.type = 'backed'
+          wx.showToast({
+            title: '撤销成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+          that.onLoad(app.globalData.opt)
+        } else {
+          that.setData(
+            { popErrorMsg: "撤销失败" }
+          );
+          that.ohShitfadeOut();
+          return;
+        }
+
+      }
+    })
+
   },
 
   borrowreview:function(e){
