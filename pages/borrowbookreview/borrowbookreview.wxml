@@ -6,14 +6,14 @@
   </view>
 
   <block wx:for="{{length}}" wx:key="{{myArray[index].number}}">
-    <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap='detail' data-index="{{index}}" >
-      <view class="td1" >{{myArray[index].bookname}}</view>
-      <view class="td">{{myArray[index].username}}</view>
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}"  data-index="{{index}}" >
+      <view class="td1" bindtap='detail' data-index="{{index}}">{{myArray[index].bookname}}</view>
+      <view class="td" bindtap='detail' data-index="{{index}}">{{myArray[index].username}}</view>
       <view class="td" bindtap='review' data-index="{{index}}"><button>通过</button></view>
     </view>
-    <view class="tr" wx:else bindtap='detail' data-index="{{index}}" >
-      <view class="td1">{{myArray[index].bookname}}</view>
-      <view class="td">{{myArray[index].username}}</view>
+    <view class="tr" wx:else  >
+      <view class="td1" bindtap='detail' data-index="{{index}}">{{myArray[index].bookname}}</view>
+      <view class="td" bindtap='detail' data-index="{{index}}">{{myArray[index].username}}</view>
       <view class="td" bindtap='review' data-index="{{index}}"><button>通过</button></view>
     </view>
   </block>

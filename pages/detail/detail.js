@@ -5,6 +5,7 @@ var util = require('../../utils/util.js')
 Page({
   globalData: {
     id: 0,
+    opt:0,
   },
 
   data: { 
@@ -15,6 +16,7 @@ Page({
   onLoad: function (options) {
     var apiurl = app.globalData.apiurl; 
     app.globalData.id = options.id
+    app.globalData.opt = options
     wx.showToast({
       title: '加载中',
       icon: 'loading',
@@ -173,6 +175,7 @@ Page({
       success: function (resul) {
         console.log('还书反馈：' + resul.data)
         if (resul.data == 1) {
+          app.globalData.opt.type = 'application'
           wx.showToast({
             title: '申请成功',
             icon: 'succes',
@@ -186,6 +189,7 @@ Page({
           that.ohShitfadeOut();
           return;  
         }
+        that.onLoad(app.globalData.opt)
       }
     })
   },
