@@ -20,8 +20,8 @@ Page({
     wx.showToast({
       title: '加载中',
       icon: 'loading',
-      duration: 1000,
-      mask: true
+      duration: 500,
+      mask: false
     })
     //查询借书记录
       wx.login({

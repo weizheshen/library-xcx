@@ -41,6 +41,31 @@ Page({
 
   loginBtnClick: function (e) {
     var apiurl = app.globalData.apiurl; 
+    if (this.data.name == ''){
+      this.setData(
+        { popErrorMsg: "姓名不能为空" }
+      );
+      this.ohShitfadeOut();
+      return; 
+    } else if (this.data.tel == ''){
+      this.setData(
+        { popErrorMsg: "手机号不能为空" }
+      );
+      this.ohShitfadeOut();
+      return; 
+    } else if (this.data.number == ''){
+      this.setData(
+        { popErrorMsg: "工号不能为空" }
+      );
+      this.ohShitfadeOut();
+      return; 
+    } else if (this.data.place == ''){
+      this.setData(
+        { popErrorMsg: "办公地点不能为空" }
+      );
+      this.ohShitfadeOut();
+      return; 
+    }else{
     wx.request({
       url: apiurl +'/modifyuserinfo?code=' + app.globalData.code + '&name=' + this.data.name + '&tel=' + this.data.tel + '&number=' + this.data.number + '&place=' + this.data.place,
       data: {
@@ -66,6 +91,7 @@ Page({
       }
 
     })
+  }
 
   },
 

@@ -21,7 +21,7 @@ Page({
     })
   },
 
-  authorInput: function (e) {
+  authorInput: function (e) { 
     this.setData({
       author: e.detail.value
     })
@@ -41,19 +41,19 @@ Page({
 
 
   loginBtnClick: function (e) {
-    var apiurl = app.globalData.apiurl; 
+    var apiurl = app.globalData.apiurl;
+    var that = this;
     if (this.data.stock==undefined){
       var sto = app.globalData.stock
     }else{
       sto = this.data.stock
     }
     if(sto<0){
-      wx.showToast({
-        title: '库存不能小于零',
-        icon: 'loading',
-        duration: 1000,
-        mask: true
-      })
+      that.setData(
+        { popErrorMsg: "库存不能小于0" }
+      );
+      that.ohShitfadeOut();
+      return;
     }else{
     wx.request({
       url: apiurl +'/modifybookinfo?code=' + app.globalData.code + '&booktitle=' + this.data.booktitle + '&author=' + this.data.author + '&publish=' + this.data.publish + '&stock=' + sto,
@@ -70,12 +70,11 @@ Page({
             mask: true
           })
         } else {
-          wx.showToast({
-            title: '修改失败！',
-            icon: 'loading',
-            duration: 1000,
-            mask: true
-          })
+          that.setData(
+            { popErrorMsg: "修改失败" }
+          );
+          that.ohShitfadeOut();
+          return;
         }
 
       }
@@ -160,6 +159,15 @@ Page({
    */
   onReady: function () {
   
+  },
+
+
+  //定时器提示框1秒消失
+  ohShitfadeOut() {
+    var fadeOutTimeout = setTimeout(() => {
+      this.setData({ popErrorMsg: '' });
+      clearTimeout(fadeOutTimeout);
+    }, 1500);
   },
 
   /**

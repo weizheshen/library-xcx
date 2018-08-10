@@ -1,3 +1,4 @@
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
 <view class="info">书名</view>
 <view class="inputView">
   <input class="input" name="booktitle"  bindinput="booktitleInput" value='{{book.booktitle}}'/>
